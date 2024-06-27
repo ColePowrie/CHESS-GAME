@@ -24,7 +24,7 @@ public class black_rook extends piece {
 			}
 		} catch (Exception e) {
 			System.out.println(e);
-			System.out.println("Invaslid!");
+			System.out.println("Invalid!");
 			return ret;
 		}
 	}
@@ -40,8 +40,7 @@ public class black_rook extends piece {
 				hold[0] = move_horight(x, y, temp);
 				return hold;
 			} else {
-				System.out.println();
-				System.out.println("Invalid! Can't move in place!");
+				System.out.println("\nInvalid! Can't move in place!");
 				return hold;
 			}
 		} else if (getCurrent_x() == x && getCurrent_y() != y) {// if y changes
@@ -52,13 +51,11 @@ public class black_rook extends piece {
 				hold[1] = move_vertup(x, y, temp);
 				return hold;
 			} else {
-				System.out.println();
-				System.out.println("Invalid! Can't move in place!");
+				System.out.println("\nInvalid! Can't move in place!");
 				return hold;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Invalid!");
+			System.out.println("\nInvalid!");
 			return hold;
 		}
 	}
@@ -147,8 +144,7 @@ public class black_rook extends piece {
 		} else if (x == getCurrent_x() && y < getCurrent_y()) {// ground
 			return take_down(x, y, temp);
 		} else {
-			System.out.println();
-			System.out.println("Invsalid!");
+			System.out.println("\nInvalid!");
 			return ret;
 		}
 	}
@@ -158,39 +154,33 @@ public class black_rook extends piece {
 			if (temp[y][x] != null) {
 				for (int i = getCurrent_x() + 1; i < x - 1; i++) {
 					if (temp[y][i] != null) {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} // for loop
 				if (temp[y][x] != null) {
 					if (temp[y][x].getColour().equals("white")) {
-						System.out.println();
-						System.out.println(temp[y][x].getName() + " Taken!");
+						System.out.println("\n" + temp[y][x].getName() + " Taken!");
 						ret[0] = x;
 						ret[1] = y;
 						setCurrent_x(x);
 						setCurrent_y(y);
 						return ret;
 					} else {
-						System.out.println();
-						System.out.println("FRIENDLY FIRE!");
+						System.out.println("\nFRIENDLY FIRE!");
 						return ret;
 					}
 
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -201,44 +191,37 @@ public class black_rook extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_x() - 1; i < x + 1; i++) {
 						if (temp[y][i] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
 						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + "Taken!");
+							System.out.println("\n" + temp[y][x].getName() + "Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -249,44 +232,37 @@ public class black_rook extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_y() + 1; i < y - 1; i++) {// cuz of this statement
 						if (temp[i][x] != null) {// ERROR HERE
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
 						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + " Taken!");
+							System.out.println("\n" + temp[y][x].getName() + " Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -297,44 +273,38 @@ public class black_rook extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_y() - 1; i < y + 1; i++) {
 						if (temp[i][x] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
 						if (temp[y][x].getColour().equals("white")) {
 							System.out.println();
-							System.out.println(temp[y][x].getName() + "Taken!");
+							System.out.println("\n" + temp[y][x].getName() + "Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}

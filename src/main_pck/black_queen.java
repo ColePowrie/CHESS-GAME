@@ -21,8 +21,8 @@ public class black_queen extends piece {
 				return move(x, y, temp);
 			}
 		} catch (Exception e) {
-			System.out.println();
-			System.out.println("Invalid!");
+
+			System.out.println("\nInvalid!");
 			return ret;
 		}
 	}
@@ -51,8 +51,8 @@ public class black_queen extends piece {
 		} else if (getCurrent_y() < y) {
 			return move_vertdown(x, y, temp);
 		} else {
-			System.out.println();
-			System.out.println("Invalid!");
+
+			System.out.println("\nInvalid!");
 			return 0;
 		}
 	}
@@ -62,8 +62,8 @@ public class black_queen extends piece {
 		if (isAlive() == true) {
 			for (int i = getCurrent_y() - 1; i > -1; i--) {
 				if (temp[i][getCurrent_x()] != null) {
-					System.out.println();
-					System.out.println("Invalid Move!");
+
+					System.out.println("\nInvalid Move!");
 					return getCurrent_y();
 				} else {
 					counter++;
@@ -71,13 +71,13 @@ public class black_queen extends piece {
 			} // for loop
 				// THIS IF STATEMENT IS NOT WOKRING
 			if (counter == (temp.length - 2 - getCurrent_y())) {
-				System.out.println();
-				System.out.println("Moved!");
+
+				System.out.println("\nMoved!");
 				return y;
 			}
 		} else {// is alive
-			System.out.println();
-			System.out.println("Piece is not on board!");
+
+			System.out.println("\nPiece is not on board!");
 		}
 		return getCurrent_y();// if something goes wrong return og
 	}// method vert up
@@ -148,8 +148,7 @@ public class black_queen extends piece {
 		} else if (x < getCurrent_x() && y < getCurrent_y()) {
 			return move_upleft(x, y, temp);
 		} else {
-			System.out.println();
-			System.out.println("Invalid!");
+			System.out.println("\nInvalid!");
 			return ret;
 		}
 	}
@@ -161,29 +160,25 @@ public class black_queen extends piece {
 				int hold = x - getCurrent_x();
 				for (int i = 0; i < hold; i++) {
 					if (temp[getCurrent_y() - i - 1][getCurrent_x() + i + 1] != null) {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					} else {
 						counter++;
 					}
 				} // for loop
 				if (counter == x - getCurrent_x() && counter == getCurrent_y() - y) {
-					System.out.println();
-					System.out.println("Moved!");
+					System.out.println("\nMoved!");
 					ret[0] = x;
 					ret[1] = y;
 					setCurrent_x(x);
 					setCurrent_y(y);
 					return ret;
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {// if the distance moved isnt the same
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		}
@@ -196,42 +191,35 @@ public class black_queen extends piece {
 			if (getCurrent_x() - x == getCurrent_y() - y) {
 				int hold = getCurrent_x() - x;
 				if (x == getCurrent_x() && y == getCurrent_y()) {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
 				for (int i = 0; i < hold; i++) {
 					if (temp[getCurrent_y() - i - 1][getCurrent_x() - i - 1] != null) {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					} else {
 						counter++;
 					}
 				} // for
 				if (counter == getCurrent_x() - x && counter == getCurrent_y() - y) {
-					System.out.println();
-					System.out.println("Moved!");
+					System.out.println("\nMoved!");
 					ret[0] = x;
 					ret[1] = y;
 					setCurrent_x(x);
 					setCurrent_y(y);
 					return ret;
 				} else {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
 
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 			}
 		} else {// isalive
-			System.out.println();
-			System.out.println("Piece is not on the board!");
+			System.out.println("\nPiece is not on the board!");
 		}
-
 		return ret;
 	}
 
@@ -241,42 +229,34 @@ public class black_queen extends piece {
 			if (x - getCurrent_x() == y - getCurrent_y()) {
 				int hold = x - getCurrent_x();
 				if (x == getCurrent_x() && y == getCurrent_y()) {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
 				for (int i = 0; i < hold; i++) {
 					if (temp[getCurrent_y() + i + 1][getCurrent_x() + i + 1] != null) {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					} else {
 						counter++;
 					}
 				} // for
 				if (counter == x - getCurrent_x() && counter == y - getCurrent_y()) {
-					System.out.println();
-					System.out.println("Moved!");
+					System.out.println("\nMoved!");
 					ret[0] = x;
 					ret[1] = y;
 					setCurrent_x(x);
 					setCurrent_y(y);
 					return ret;
 				} else {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
-
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 			}
 		} else {// isalive
-			System.out.println();
-			System.out.println("Piece is not on the board!");
+			System.out.println("\nPiece is not on the board!");
 		}
-
 		return ret;
 	}
 
@@ -286,40 +266,34 @@ public class black_queen extends piece {
 			if (getCurrent_x() - x == y - getCurrent_y()) {
 				int hold = getCurrent_x() - x;
 				if (x == getCurrent_x() && y == getCurrent_y()) {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
 				for (int i = 0; i < hold; i++) {
 					if (temp[getCurrent_y() + i + 1][getCurrent_x() - i - 1] != null) {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					} else {
 						counter++;
 					}
 				} // for
 				if (counter == getCurrent_x() - x && counter == y - getCurrent_y()) {
-					System.out.println();
-					System.out.println("Moved!");
+					System.out.println("\nMoved!");
 					ret[0] = x;
 					ret[1] = y;
 					setCurrent_x(x);
 					setCurrent_y(y);
 					return ret;
 				} else {
-					System.out.println();
-					System.out.println("Invalid");
+					System.out.println("\nInvalid");
 					return ret;
 				}
 
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 			}
 		} else {// isalive
-			System.out.println();
-			System.out.println("Piece is not on the board!");
+			System.out.println("\nPiece is not on the board!");
 		}
 
 		return ret;
@@ -344,7 +318,7 @@ public class black_queen extends piece {
 		} else if (x == getCurrent_x() && y < getCurrent_y()) {// sky
 			return take_down(x, y, temp);
 		} else {
-			System.out.println("\nInvalida!");
+			System.out.println("\nInvalid!");
 			return ret;
 		}
 	}
@@ -354,34 +328,33 @@ public class black_queen extends piece {
 		if (isAlive() == true) {
 			if (x - 1 == getCurrent_x() && y + 1 == getCurrent_y()) {// just moves one
 				if (temp[y][x] != null) {
-					if (temp[y][x].getColour().equals("white")) {
-						System.out.println();
-						System.out.println(temp[y][x].getName() + " Taken!");
+					if (temp[y][x].getColour().equals("\nwhite")) {
+						System.out.println("\n" + temp[y][x].getName() + " Taken!");
 						ret[0] = x;
 						ret[1] = y;
 						setCurrent_x(x);
 						setCurrent_y(y);
 						return ret;
 					} else {
-						System.out.println();
-						System.out.println("FRIENDLY FIRE!");
+
+						System.out.println("\nFRIENDLY FIRE!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else if ((x - getCurrent_x() == getCurrent_y() - y) && (x - getCurrent_x()) > 0
 					&& (getCurrent_y() - y) > 0) {
 				for (int i = 1; i < x; i++) {
 					if (temp[getCurrent_y() - i][getCurrent_x() + i] != null) {// something in way
-						System.out.println();
-						System.out.println("Invalid!");// THIS IS THE ISSUE
+
+						System.out.println("\nInvalid!");// THIS IS THE ISSUE
 						return ret;
 					}
 				} // end of for loop
-				System.out.println();
+
 				System.out.println(temp[y][x].getName() + "Taken!");
 				ret[0] = x;
 				ret[1] = y;
@@ -389,13 +362,13 @@ public class black_queen extends piece {
 				setCurrent_y(y);
 				return ret;
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {// not alive
-			System.out.println();
-			System.out.println("Not on board!");
+
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -404,48 +377,41 @@ public class black_queen extends piece {
 		if (isAlive() == true) {
 			if (x + 1 == getCurrent_x() && y + 1 == getCurrent_y()) {// just moves one
 				if (temp[y][x] != null) {
-					if (temp[y][x].getColour().equals("white")) {
-						System.out.println();
-						System.out.println(temp[y][x].getName() + " Taken!");
+					if (temp[y][x].getColour().equals("\nwhite")) {
+						System.out.println("\n" + temp[y][x].getName() + " Taken!");
 						ret[0] = x;
 						ret[1] = y;
 						setCurrent_x(x);
 						setCurrent_y(y);
 						return ret;
 					} else {
-						System.out.println();
-						System.out.println("FRIENDLY FIRE!");
+						System.out.println("\nFRIENDLY FIRE!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else if ((getCurrent_x() - x == getCurrent_y() - y) && (getCurrent_x() - x) > 0
 					&& (getCurrent_y() - y) > 0) {
 				for (int i = 1; i < x; i++) {
 					if (temp[getCurrent_y() - i][getCurrent_x() - i] != null) {// something in way
-						System.out.println();
-						System.out.println("Invalid!");// THIS IS THE ISSUE
+						System.out.println("\nInvalid!");// THIS IS THE ISSUE
 						return ret;
 					}
 				} // end of for loop
-				System.out.println();
-				System.out.println(temp[y][x].getName() + " Taken!");
+				System.out.println("\n" + temp[y][x].getName() + " Taken!");
 				ret[0] = x;
 				ret[1] = y;
 				setCurrent_x(x);
 				setCurrent_y(y);
 				return ret;
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {// not alive
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -454,48 +420,41 @@ public class black_queen extends piece {
 		if (isAlive() == true) {
 			if (x - 1 == getCurrent_x() && y - 1 == getCurrent_y()) {// just moves one
 				if (temp[y][x] != null) {
-					if (temp[y][x].getColour().equals("white")) {
-						System.out.println();
-						System.out.println(temp[y][x].getName() + " Taken!");
+					if (temp[y][x].getColour().equals("\nwhite")) {
+						System.out.println("\n" + temp[y][x].getName() + " Taken!");
 						ret[0] = x;
 						ret[1] = y;
 						setCurrent_x(x);
 						setCurrent_y(y);
 						return ret;
 					} else {
-						System.out.println();
-						System.out.println("FRIENDLY FIRE!");
+						System.out.println("\nFRIENDLY FIRE!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else if ((x - getCurrent_x() == y - getCurrent_y()) && (x - getCurrent_x() > 0)
 					&& (y - getCurrent_y()) > 0) {
 				for (int i = 1; i < x; i++) {
 					if (temp[getCurrent_y() + i][getCurrent_x() + i] != null) {// something in way
-						System.out.println();
-						System.out.println("Invalid!");// THIS IS THE ISSUE
+						System.out.println("\nInvalid!");// THIS IS THE ISSUE
 						return ret;
 					}
 				} // end of for loop
-				System.out.println();
-				System.out.println(temp[y][x].getName() + "Taken!");
+				System.out.println("\n" + temp[y][x].getName() + "Taken!");
 				ret[0] = x;
 				ret[1] = y;
 				setCurrent_x(x);
 				setCurrent_y(y);
 				return ret;
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {// not alive
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -504,48 +463,41 @@ public class black_queen extends piece {
 		if (isAlive() == true) {
 			if (x + 1 == getCurrent_x() && y - 1 == getCurrent_y()) {// just moves one
 				if (temp[y][x] != null) {
-					if (temp[y][x].getColour().equals("white")) {
-						System.out.println();
-						System.out.println(temp[y][x].getName() + " Taken!");
+					if (temp[y][x].getColour().equals("\nwhite")) {
+						System.out.println("\n" + temp[y][x].getName() + " Taken!");
 						ret[0] = x;
 						ret[1] = y;
 						setCurrent_x(x);
 						setCurrent_y(y);
 						return ret;
 					} else {
-						System.out.println();
-						System.out.println("FRIENDLY FIRE!");
+						System.out.println("\nFRIENDLY FIRE!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else if ((getCurrent_x() - x == y - getCurrent_y()) && (getCurrent_x() - x > 0)
 					&& (y - getCurrent_y()) > 0) {
 				for (int i = 1; i < x; i++) {
 					if (temp[getCurrent_y() + i][getCurrent_x() - i] != null) {// something in way
-						System.out.println();
-						System.out.println("Invalid!");// THIS IS THE ISSUE
+						System.out.println("\nInvalid!");// THIS IS THE ISSUE
 						return ret;
 					}
 				} // end of for loop
-				System.out.println();
-				System.out.println(temp[y][x].getName() + "Taken!");
+				System.out.println("\n" + temp[y][x].getName() + "Taken!");
 				ret[0] = x;
 				ret[1] = y;
 				setCurrent_x(x);
 				setCurrent_y(y);
 				return ret;
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {// not alive
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -557,44 +509,37 @@ public class black_queen extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_x() + 1; i < x - 1; i++) {
 						if (temp[y][i] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
-						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + " Taken!");
+						if (temp[y][x].getColour().equals("\nwhite")) {
+							System.out.println("\n" + temp[y][x].getName() + " Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -605,44 +550,37 @@ public class black_queen extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_x() - 1; i < x + 1; i++) {
 						if (temp[y][i] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
-						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + " Taken!");
+						if (temp[y][x].getColour().equals("\nwhite")) {
+							System.out.println("\n" + temp[y][x].getName() + " Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -653,44 +591,37 @@ public class black_queen extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_y() + 1; i < y - 1; i++) {
 						if (temp[i][x] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
-						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + " Taken!");
+						if (temp[y][x].getColour().equals("\nwhite")) {
+							System.out.println("\n" + temp[y][x].getName() + " Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}
@@ -701,44 +632,37 @@ public class black_queen extends piece {
 				if (temp[y][x] != null) {
 					for (int i = getCurrent_y() - 1; i < y + 1; i++) {
 						if (temp[i][x] != null) {
-							System.out.println();
-							System.out.println("Invalid!");
+							System.out.println("\nInvalid!");
 							return ret;
 						}
 					} // for loop
 					if (temp[y][x] != null) {
-						if (temp[y][x].getColour().equals("white")) {
-							System.out.println();
-							System.out.println(temp[y][x].getName() + " Taken!");
+						if (temp[y][x].getColour().equals("\nwhite")) {
+							System.out.println("\n" + temp[y][x].getName() + " Taken!");
 							ret[0] = x;
 							ret[1] = y;
 							setCurrent_x(x);
 							setCurrent_y(y);
 							return ret;
 						} else {
-							System.out.println();
-							System.out.println("FRIENDLY FIRE!");
+							System.out.println("\nFRIENDLY FIRE!");
 							return ret;
 						}
 
 					} else {
-						System.out.println();
-						System.out.println("Invalid!");
+						System.out.println("\nInvalid!");
 						return ret;
 					}
 				} else {
-					System.out.println();
-					System.out.println("Invalid!");
+					System.out.println("\nInvalid!");
 					return ret;
 				}
 			} else {
-				System.out.println();
-				System.out.println("Invalid!");
+				System.out.println("\nInvalid!");
 				return ret;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Not on board!");
+			System.out.println("\nNot on board!");
 			return ret;
 		}
 	}

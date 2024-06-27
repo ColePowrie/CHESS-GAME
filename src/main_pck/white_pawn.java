@@ -36,8 +36,8 @@ public class white_pawn extends piece {
 				tempy = tempy - 1;
 				setCurrent_y(tempy);
 				hold = tempy;
-				System.out.println();
-				System.out.println("Moved!");
+
+				System.out.println("\nMoved!");
 				setMoved(true);
 				this.hold[0] = getCurrent_x();
 				this.hold[1] = hold;
@@ -45,13 +45,13 @@ public class white_pawn extends piece {
 				setCurrent_y(y);
 				return this.hold;
 			} else {
-				System.out.println();
-				System.out.println("Invalid Move!");
+
+				System.out.println("\nInvalid Move!");
 				return this.hold;
 			}
 		} else {
-			System.out.println();
-			System.out.println("Invalid!");
+
+			System.out.println("\nInvalid!");
 			return this.hold;
 		}
 	}
@@ -74,18 +74,18 @@ public class white_pawn extends piece {
 					setMoved(true);
 					return this.hold;
 				} else {
-					System.out.println();
-					System.out.println("Invalid Move!");
+
+					System.out.println("\nInvalid Move!");
 					return this.hold;
 				}
 			} else {
-				System.out.println();
-				System.out.println("piece is not on board!");
+
+				System.out.println("\nPiece is not on board!");
 				return this.hold;
 			}
 		} else {// else for ismoved
-			System.out.println();
-			System.out.println("Cannot move twice");
+
+			System.out.println("\nCannot move twice");
 			return this.hold;
 		}
 	}
@@ -94,9 +94,8 @@ public class white_pawn extends piece {
 		if (isAlive() == true) {
 			if (temp[getCurrent_y() - 1][getCurrent_x() + 1] != null
 					&& temp[getCurrent_y() - 1][getCurrent_x() + 1] == temp[y][x]) {// right
-				if (temp[y][x].getColour().equals("black")) {
-					System.out.println();
-					System.out.println("Piece Taken!");
+				if (temp[y][x].getColour().equals("\nblack")) {
+					System.out.println("\nPiece Taken!");
 					temp[y][x].setAlive(false);
 					setMoved(true);
 					hold[0] = x;
@@ -105,15 +104,14 @@ public class white_pawn extends piece {
 					setCurrent_y(y);
 					return hold;
 				} else {
-					System.out.println();
-					System.out.println("Invalid!(FRIENDLY FIRE)");
+
+					System.out.println("\nFRIENDLY FIRE!");
 					return hold;
 				} // check colour
 			} else if (temp[getCurrent_y()][getCurrent_x()] != null
 					&& temp[getCurrent_y() - 1][getCurrent_x() - 1] == temp[y][x]) {// left
 				if (temp[y][x].getName() == "black") {
-					System.out.println();
-					System.out.println("Piece Taken!");
+					System.out.println("\nPiece Taken!");
 					temp[y][x].setAlive(false);
 					setMoved(true);
 					hold[0] = x;
@@ -122,19 +120,19 @@ public class white_pawn extends piece {
 					setCurrent_y(y);
 					return hold;
 				} else {
-					System.out.println();
-					System.out.println("Invalid!(FRIENDLY FIRE)");
+
+					System.out.println("\nFRIENDLY FIRE!");
 					return hold;
 				} // check colour
 			} else {// if there isnt a piece there
-				System.out.println();
-				System.out.println("Invalid!");
+
+				System.out.println("\nInvalid!");
 				return hold;
 			}
 
 		} else {// is not on the board
-			System.out.println();
-			System.out.println("Invalid!(not on board)");
+
+			System.out.println("\nPiece is not on board!");
 			return hold;
 		}
 	}
